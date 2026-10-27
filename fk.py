@@ -9,7 +9,7 @@ def fk(t1, t2, t3):
     z = L0 + L1 * np.sin(t2) + L2 * np.sin(t2 + t3)
     x = r * np.cos(t1)
     y = r * np.sin(t1)
-    return np.array([r, z, x, y])
+    return np.array([x, y, z])
 
 
 tests = [
