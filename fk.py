@@ -11,16 +11,17 @@ def fk(t1, t2, t3):
     y = r * np.sin(t1)
     return np.array([x, y, z])
 
+if __name__ ==  "__main__" :
 
-tests = [
-    [0, 0, 0],
-    [0, 90, 0],
-    [90, 0, 0],
-    [0, 90, -90],
-    [0, 30, 30],
-]
+    tests = [
+        [0, 0, 0],
+        [0, 90, 0],
+        [90, 0, 0],
+        [0, 90, -90],
+        [0, 30, 30],
+    ]
 
-for deg in tests:
-    t = np.radians(deg)
-    pos = fk(t[0], t[1], t[2])
-    print(deg, "->", np.round(pos, 3))
+    for deg in tests:
+        t = np.radians(deg)
+        pos = fk(t[0], t[1], t[2])
+        print(deg, "->", np.round(pos, 3))
