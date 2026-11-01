@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from fk import fk, L0, L1
 def elbow(t1, t2):
     r = L1 * np.cos(t2)
@@ -16,3 +17,16 @@ deg = [0, 30, 30]
 t = np.radians(deg)
 pts = arm_points(t[0], t[1], t[2])
 print(np.round(pts, 3))
+
+ax = plt.figure().add_subplot(projection ="3d")
+ax.plot(pts[:, 0], pts[:, 1], pts[:, 2], "-o", linewidth = 4)
+
+ax.set_xlim(-0.5, 0.5)
+ax.set_ylim(-0.5, 0.5)
+ax.set_zlim(0, 0.6)
+
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
+ax.set_title(f"θ = {deg}")
+plt.show()
