@@ -25,6 +25,8 @@ ax.set_xlim(-0.5, 0.5)
 ax.set_ylim(-0.5, 0.5)
 ax.set_zlim(0, 0.6)
 
+ax.set_box_aspect((1, 1, 0.6)) 
+
 ax.set_xlabel("x")
 ax.set_ylabel("y")
 ax.set_zlabel("z")
