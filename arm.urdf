@@ -1,14 +1,14 @@
 <?xml version = "1.0"?>
-<robort name="rrr_arm">
+<robot name="rrr_arm">
     <link name="base_link">
       <visual>
-        <origin xyz="base_link">
+        <origin xyz="0 0 0.01">
         <geometry>
-          <cylinder radius="0.06 length="0.02"/>
+          <cylinder radius="0.06" length="0.02"/>
         </geometry>
         <material name="gray">
-          <color rgba="0.5 0.5 0.5 1">
+          <color rgba="0.5 0.5 0.5 1"/>
         </material>
-      <visual>
+      </visual>
     </link>
-</robort>
+</robot>
