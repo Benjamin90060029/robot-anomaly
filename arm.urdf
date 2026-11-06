@@ -2,7 +2,7 @@
 <robot name="rrr_arm">
     <link name="base_link">
       <visual>
-        <origin xyz="0 0 0.01">
+        <origin xyz="0 0 0.01"/>
         <geometry>
           <cylinder radius="0.06" length="0.02"/>
         </geometry>

@@ -7,4 +7,5 @@ p.resetDebugVisualizerCamera(0.9, 45, -25, [0,0, 0.2]) #設定相機：距離0.9
 
 
 while p.isConnected():
-    time.sleep(0.1)
+    p.stepSimulation()
+    time.sleep(1 / 240)
