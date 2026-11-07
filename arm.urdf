@@ -48,4 +48,40 @@
         </material>
       </visual>
     </link>
+        <joint name="joint3_elbow" type="revolute">
+      <parent link="link2_upper"/>
+      <child link="link3_fore"/>
+      <origin xyz="0.25 0 0"/>
+      <axis xyz="0 -1 0"/>
+      <limit lower="-2.6" upper="2.6" effort="20" velocity="3"/>
+    </joint>
+
+    <link name="link3_fore">
+      <visual>
+        <origin xyz="0.10 0 0" rpy="0 1.5708 0"/>
+        <geometry>
+          <cylinder radius="0.018" length="0.20"/>
+        </geometry>
+        <material name="lilac">
+          <color rgba="0.5 0.47 0.87 1"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="ee_fixed" type="fixed">
+      <parent link="link3_fore"/>
+      <child link="ee_link"/>
+      <origin xyz="0.20 0 0"/>
+    </joint>
+
+    <link name="ee_link">
+      <visual>
+        <geometry>
+          <sphere radius="0.025"/>
+        </geometry>
+        <material name="coral">
+          <color rgba="0.85 0.35 0.19 1"/>
+        </material>
+      </visual>
+    </link>
 </robot>
