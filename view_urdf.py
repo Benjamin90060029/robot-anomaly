@@ -10,11 +10,16 @@ print("關節數量：", p.getNumJoints(robot))
 
 s1 = p.addUserDebugParameter("theta1 (deg)", -180, 180, 0)
 s2 = p.addUserDebugParameter("theta2 (deg)", -90, 90, 0)
+s3 = p.addUserDebugParameter("theta2 (deg)", -149, 149, 0)
 
 while p.isConnected():
     t1 = np.radians(p.readUserDebugParameter(s1))
     t2 = np.radians(p.readUserDebugParameter(s2))
+    t3 = np.radians(p.readUserDebugParameter(s3))
+
     p.resetJointState(robot, 0, t1)
     p.resetJointState(robot, 1, t2)
+    p.resetJointState(robot, 2, t3)
+    
     p.stepSimulation()
     time.sleep(1 / 240)
