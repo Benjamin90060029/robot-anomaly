@@ -2,8 +2,8 @@ import numpy as np
 import pybullet as p
 from fk import fk
 
-p.connect(p.DIRECT)
-robot = p.loadURDF("arm.urdf", useFixedBase=True)
+p.connect(p.DIRECT)                                 #只計算，不顯示畫面
+robot = p.loadURDF("arm.urdf", useFixedBase=True)   #3
 
 
 def pybullet_ee(t1, t2, t3):
@@ -28,7 +28,7 @@ for deg in tests:
     err = np.linalg.norm(mine - sim)             # 兩點距離 = 誤差
     print(deg, "fk:", np.round(mine, 3), "PyBullet:", np.round(sim, 3), "誤差:", err)
 
-    rng = np.random.default_rng(0)
+rng = np.random.default_rng(0)
 max_err = 0
 
 for i in range(1000):
@@ -45,4 +45,3 @@ if max_err < 1e-6:
     print("通過！你的 fk 和 PyBullet 完全一致")
 else:
     print("誤差太大，檢查 fk.py 或 arm.urdf")
-    
